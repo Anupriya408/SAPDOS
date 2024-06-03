@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const Color darkBlue = Color(0xFF001F3F);
+// const Color strongerBlue = Color(0xFF004080); // A stronger blue color for better contrast
 
 void main() {
   runApp(MaterialApp(
@@ -99,9 +100,10 @@ class PatientDetailsScreen extends StatelessWidget {
                     ),
                     leading: Icon(Icons.history, color: Colors.white),
                     backgroundColor: darkBlue,
+                    collapsedBackgroundColor: darkBlue,
                     children: [
                       Container(
-                        color: Colors.lightBlue[50], // Light background color for the expanded content
+                        color: Colors.lightBlue[50], 
                         child: Column(
                           children: [
                             CustomListTile(title: 'Blood report'),
@@ -122,9 +124,10 @@ class PatientDetailsScreen extends StatelessWidget {
                     ),
                     leading: Icon(Icons.description, color: Colors.white),
                     backgroundColor: darkBlue,
+                    collapsedBackgroundColor: darkBlue,
                     children: [
                       Container(
-                        color: Colors.lightBlue[50], // Light background color for the expanded content
+                        color: Colors.lightBlue[50], 
                         child: Column(
                           children: [
                             CustomListTile(title: '26 March 2022'),

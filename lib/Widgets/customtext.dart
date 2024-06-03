@@ -1,49 +1,3 @@
-// import 'package:flutter/material.dart';
-
-// class CustomTextField extends StatelessWidget {
-//   final String labelText;
-//   final IconData icon;
-//   final bool obscureText;
-//   final IconData? suffixIcon; // Optional parameter for suffix icon
-//   final TextStyle? labelStyle;
-//   final double width; // Added width parameter
-
-//   const CustomTextField({
-//     Key? key,
-//     required this.labelText,
-//     required this.icon,
-//     this.obscureText = false,
-//     this.suffixIcon, // Optional suffix icon
-//     this.labelStyle,
-//     this.width = double.infinity, // Default width value (full width)
-//   }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SizedBox(
-//       width: width,
-//       child: Container(
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(8),
-//           border: Border.all(color: Colors.grey),
-//         ),
-//         child: TextFormField(
-//           decoration: InputDecoration(
-//             contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-//             labelText: labelText,
-//             prefixIcon: Icon(icon),
-//             suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null, // Display suffix icon if provided
-//             border: InputBorder.none, // Remove the default input border
-//             labelStyle: labelStyle,
-//           ),
-//           obscureText: obscureText,
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -83,12 +37,12 @@ class CustomTextField extends StatelessWidget {
             contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             labelText: labelText,
             prefixIcon: Icon(icon),
-            suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null, // Display suffix icon if provided
-            border: InputBorder.none, // Remove the default input border
+            suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null, 
+            border: InputBorder.none, 
             labelStyle: labelStyle,
           ),
           obscureText: obscureText,
-          validator: validator, // Use the validator
+          validator: validator, 
         ),
       ),
     );

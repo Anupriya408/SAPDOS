@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginScreen02(),
         '/register': (context) => LoginScreen03(),
         '/doctor': (context) => DoctorScreen(),
+        // '/doctorscreen01': (context) => DoctorScreen01(),
       },
     );
   }

@@ -78,8 +78,8 @@ class _LoginScreen03State extends State<LoginScreen03> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20.0),
-                    bottomLeft: Radius.circular(20.0),
+                    topRight: Radius.circular(20.0),
+                    bottomRight: Radius.circular(20.0),
                   ),
                   boxShadow: [
                     BoxShadow(
@@ -92,8 +92,8 @@ class _LoginScreen03State extends State<LoginScreen03> {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20.0),
-                    bottomLeft: Radius.circular(20.0),
+                    topRight: Radius.circular(20.0),
+                    bottomRight: Radius.circular(20.0),
                   ),
                   child: Image.asset(
                     'images/doc1.png', // Ensure the correct path
@@ -108,8 +108,8 @@ class _LoginScreen03State extends State<LoginScreen03> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20.0),
-                    bottomRight: Radius.circular(20.0),
+                    topLeft: Radius.circular(20.0),
+                    bottomLeft: Radius.circular(20.0),
                   ),
                   boxShadow: [
                     BoxShadow(

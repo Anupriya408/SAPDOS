@@ -136,7 +136,7 @@ class LoginScreen01 extends StatelessWidget {
                                 SizedBox(height: 30),
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.pushNamed(context, '/guest'); // Adjust the route as needed
+                                    Navigator.pushNamed(context, '/doctorscreen1'); // Adjusted route
                                   },
                                   child: const Text(
                                     'Proceed as a Guest',
@@ -163,8 +163,8 @@ class LoginScreen01 extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20.0),
-                            bottomLeft: Radius.circular(20.0),
+                            topRight: Radius.circular(20.0),
+                            bottomRight: Radius.circular(20.0),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -177,8 +177,8 @@ class LoginScreen01 extends StatelessWidget {
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20.0),
-                            bottomLeft: Radius.circular(20.0),
+                            topRight: Radius.circular(20.0),
+                            bottomRight: Radius.circular(20.0),
                           ),
                           child: Image.asset(
                             'images/doc1.png',
@@ -193,8 +193,8 @@ class LoginScreen01 extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(20.0),
-                            bottomRight: Radius.circular(20.0),
+                            topLeft: Radius.circular(20.0),
+                            bottomLeft: Radius.circular(20.0),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -282,7 +282,7 @@ class LoginScreen01 extends StatelessWidget {
                               SizedBox(height: 30),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.pushNamed(context, '/guest'); // Adjust the route as needed
+                                  Navigator.pushNamed(context, '/doctor'); // Adjusted route
                                 },
                                 child: const Text(
                                   'Proceed as a Guest',
