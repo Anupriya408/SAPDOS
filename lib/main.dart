@@ -5,6 +5,7 @@ import 'screens/login/loginscreen-01.dart';
 import 'screens/login/loginscreen-02.dart';
 import 'screens/login/loginscreen-03.dart';
 import 'screens/doctors/doctorscreen02.dart';
+import 'screens/patients/patientscreen01.dart';
 import 'providers/authprovider.dart';
 import 'theme/theme.dart';
 
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginScreen02(),
         '/register': (context) => LoginScreen03(),
         '/doctor': (context) => DoctorScreen(),
+        '/patientscreen01': (context) => PatientScreen(),
         // '/doctorscreen01': (context) => DoctorScreen01(),
       },
     );
