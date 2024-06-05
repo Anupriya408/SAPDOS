@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:first_project/providers/authprovider.dart';
 import 'package:first_project/data/mock_data.dart';
-// import 'package:first_project/json/user_data.json';
-// import 'package:flutter/services.dart'; // Import rootBundle
-
-
 
 const Color darkBlue = Color(0xFF001F3F);
 
@@ -18,17 +14,20 @@ class PatientScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: [
-            Text(
-              'Patient Screen',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Spacer(),
-          ],
+        title: Text(
+          'Patient Screen',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
+        ],
       ),
       drawer: Drawer(
         child: Container(
@@ -137,19 +136,19 @@ class PatientScreen extends StatelessWidget {
                   children: [
                     Text(
                       user['greeting'],
-                      style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       user['name'],
-                      style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ],
                 ),
                 CircleAvatar(
                   backgroundImage: NetworkImage(user['avatar']),
-                  radius: 40,
+                  radius: 30,
                 ),
               ],
             ),
@@ -159,7 +158,7 @@ class PatientScreen extends StatelessWidget {
                 color: darkBlue,
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 20.0),
+              padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -175,60 +174,101 @@ class PatientScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: doctorsList.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 11.0,
-                mainAxisSpacing: 11.0,
-                childAspectRatio: 3/2,
-              ),
-              itemBuilder: (context, index) {
-                final doctor = doctorsList[index] as Map<String, dynamic>;
-                return Card(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Center(
-                          child: CircleAvatar(
-                            backgroundImage: NetworkImage(doctor['doctorImage']),
-                            radius: 40,
-                          ),
-                        ),
-                      ),
-                      Padding(
+            LayoutBuilder(
+              builder: (context, constraints) {
+                int crossAxisCount;
+                double childAspectRatio;
+
+                if (constraints.maxWidth >= 1200) {
+                  crossAxisCount = 4;
+                  childAspectRatio = 4 / 1;
+                } else if (constraints.maxWidth >= 800) {
+                  crossAxisCount = 2;
+                  childAspectRatio = 3.5 / 1;
+                } else {
+                  crossAxisCount = 1;
+                  childAspectRatio = 3 / 1;
+                }
+
+                return GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: doctorsList.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: crossAxisCount,
+                    crossAxisSpacing: 8.0,
+                    mainAxisSpacing: 8.0,
+                    childAspectRatio: childAspectRatio,
+                  ),
+                  itemBuilder: (context, index) {
+                    final doctor = doctorsList[index] as Map<String, dynamic>;
+                    return Card(
+                      child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              doctor['doctorName'],
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16.0,
-                              ),
-                            ),
-                            Text(
-                              doctor['specialization'],
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 14.0,
-                              ),
-                            ),
                             Row(
                               children: [
-                                Icon(Icons.star, color: Colors.yellow, size: 16.0),
-                                Text('${doctor['price']}'),
+                                CircleAvatar(
+                                  backgroundImage: NetworkImage(doctor['doctorImage']),
+                                  radius: 30,
+                                ),
+                                SizedBox(width: 6.0),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        doctor['doctorName'],
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16.0,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      Text(
+                                        doctor['specialization'],
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 14.0,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ],
+                            ),
+                            Spacer(),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Row(
+                                children: [
+                                  Row(
+                                    children: List.generate(5, (starIndex) {
+                                      return Icon(
+                                        Icons.star,
+                                        color: Colors.yellow,
+                                        size: 18.0,
+                                      );
+                                    }),
+                                  ),
+                                  SizedBox(width: 4.0),
+                                  Text(
+                                    '${doctor['price']}',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14.0,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
                       ),
-                    ],
-                  ),
+                    );
+                  },
                 );
               },
             ),
@@ -238,5 +278,3 @@ class PatientScreen extends StatelessWidget {
     );
   }
 }
-
-
