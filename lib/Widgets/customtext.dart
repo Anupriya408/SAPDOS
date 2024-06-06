@@ -4,7 +4,7 @@ class CustomTextField extends StatelessWidget {
   final String labelText;
   final IconData icon;
   final bool obscureText;
-  final IconData? suffixIcon; // Optional parameter for suffix icon
+  final IconData? suffixIcon; 
   final TextStyle? labelStyle;
   final double width; // Added width parameter
   final TextEditingController? controller; // Added controller parameter
@@ -15,9 +15,9 @@ class CustomTextField extends StatelessWidget {
     required this.labelText,
     required this.icon,
     this.obscureText = false,
-    this.suffixIcon, // Optional suffix icon
+    this.suffixIcon, 
     this.labelStyle,
-    this.width = double.infinity, // Default width value (full width)
+    this.width = double.infinity, 
     this.controller, // Added controller
     this.validator, // Added validator
   }) : super(key: key);
@@ -32,7 +32,7 @@ class CustomTextField extends StatelessWidget {
           border: Border.all(color: Colors.grey),
         ),
         child: TextFormField(
-          controller: controller, // Use the controller
+          controller: controller, 
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             labelText: labelText,
