@@ -61,7 +61,6 @@ class DoctorScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  // Handle categories tap
                 },
               ),
               ListTile(
@@ -74,7 +73,6 @@ class DoctorScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  // Handle appointment tap
                 },
               ),
               ListTile(
@@ -87,7 +85,6 @@ class DoctorScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  // Handle chat tap
                 },
               ),
               ListTile(
@@ -100,7 +97,6 @@ class DoctorScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  // Handle settings tap
                 },
               ),
               ListTile(
@@ -113,7 +109,6 @@ class DoctorScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  // Handle logout tap
                 },
               ),
             ],
@@ -345,5 +340,3 @@ class DoctorScreen extends StatelessWidget {
     );
   }
 }
-
-

@@ -4,7 +4,6 @@ import 'package:first_project/screens/patients/patient_screen_01.dart';
 
 
 const Color darkBlue = Color(0xFF001F3F);
-// const Color strongerBlue = Color(0xFF004080); // A stronger blue color for better contrast
 
 void main() {
   runApp(MaterialApp(
@@ -175,7 +174,7 @@ class CustomListTile extends StatelessWidget {
   const CustomListTile({
     Key? key,
     required this.title,
-    this.icon = Icons.remove_red_eye, // Default icon
+    this.icon = Icons.remove_red_eye, 
   }) : super(key: key);
 
   @override
@@ -208,16 +207,3 @@ class CustomListTile extends StatelessWidget {
   }
 }
 
-// class PatientScreen01 extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Patient Screen 01'),
-//       ),
-//       body: Center(
-//         child: Text('Welcome to Patient Screen 01'),
-//       ),
-//     );
-//   }
-// }
