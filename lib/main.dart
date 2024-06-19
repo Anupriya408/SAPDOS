@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'screens/doctors/doctorscreen01.dart';
-import 'screens/login/loginscreen-01.dart';
-import 'screens/login/loginscreen-02.dart';
-import 'screens/login/loginscreen-03.dart';
-import 'screens/doctors/doctorscreen02.dart';
-import 'screens/patients/patientscreen01.dart';
+import 'screens/doctors/doctor_screen_01.dart';
+import 'screens/login/login_screen_01.dart';
+import 'screens/login/login_screen_02.dart';
+import 'screens/login/login_screen_03.dart';
+import 'screens/doctors/doctor_screen_02.dart';
+import 'screens/patients/patient_screen_01.dart';
 import 'providers/authprovider.dart';
 import 'theme/theme.dart';
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:first_project/Widgets/appointment_card.dart';
 import 'package:first_project/providers/authprovider.dart';
-import 'package:first_project/screens/doctors/doctorscreen02.dart';
+import 'package:first_project/screens/doctors/doctor_screen_02.dart';
 
 
 const Color darkBlue = Color(0xFF001F3F);

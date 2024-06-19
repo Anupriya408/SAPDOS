@@ -3,9 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:first_project/providers/authprovider.dart';
 import 'package:first_project/data/mock_data.dart';
 
-const Color darkBlue = Color(0xFF001F3F);
-
 class PatientScreen extends StatelessWidget {
+  static const Color darkBlue = Color(0xFF001F3F);
+
   @override
   Widget build(BuildContext context) {
     final doctorName = Provider.of<AuthProvider>(context).doctorName;
