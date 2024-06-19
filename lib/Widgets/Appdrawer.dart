@@ -46,7 +46,7 @@ class AppDrawer extends StatelessWidget {
                 'Appointment',
                 style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
               ),
-              onTap: () {}, // Define tap action here
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.chat, color: Colors.white),
@@ -54,7 +54,7 @@ class AppDrawer extends StatelessWidget {
                 'Chat',
                 style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
               ),
-              onTap: () {}, // Define tap action here
+              onTap: () {}, 
             ),
             ListTile(
               leading: Icon(Icons.settings, color: Colors.white),
@@ -62,7 +62,7 @@ class AppDrawer extends StatelessWidget {
                 'Settings',
                 style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
               ),
-              onTap: () {}, // Define tap action here
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.logout, color: Colors.white),
@@ -71,7 +71,7 @@ class AppDrawer extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
               ),
               onTap: () {
-                // Add functionality for logout
+                
               },
             ),
           ],
